@@ -1,8 +1,7 @@
 #include <iostream>
-#include <string>
 #include <algorithm> 
-#include <cctype>
 #include <cassert>
+#include <cmath>
 using namespace std;
 
 int factorial(int num) {
@@ -15,17 +14,20 @@ int factorial(int num) {
     return f;
 }
 
+int factSqr(int num) {
+    return pow(factorial(num), 2);
+}
+
 int main() {
-    // Тест факториала нуля
-    assert(factorial(0) == 1);
+    // Тест квадрата факториала нуля
+    assert(factSqr(0) == 1);
 
-    // Тесты факториала положительных чисел
-    assert(factorial(1) == 1);
-    assert(factorial(2) == 2);
-    assert(factorial(3) == 6);
-    assert(factorial(4) == 24);
-    assert(factorial(5) == 120);
-    assert(factorial(10) == 3628800);
-
+    // Тесты квадратов факториала положительных чисел
+    assert(factSqr(1) == 1);
+    assert(factSqr(2) == 4);
+    assert(factSqr(3) == 36);
+    assert(factSqr(4) == 576);
+    assert(factSqr(5) == 14400);
+    
     return 0;
 }
